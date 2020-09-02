@@ -1,6 +1,7 @@
 package com.platform.idleplatform.goods.controller;
 
 import com.platform.idleplatform.goods.entity.GoodsInfo;
+import com.platform.idleplatform.goods.entity.OrderInfo;
 import com.platform.idleplatform.goods.service.GoodsService;
 import com.platform.idleplatform.test.service.TestService;
 import com.platform.idleplatform.tool.AppResponse;
@@ -31,4 +32,10 @@ public class GoodsController {
     AppResponse getImgList(String goodsId){
         return goodsService.getImgList(goodsId);
     }
+
+    @RequestMapping("getGoodsById")
+    AppResponse getGoodsById(String userId){
+        return goodsService.getGoodsById(userId);
+    }
+
 }

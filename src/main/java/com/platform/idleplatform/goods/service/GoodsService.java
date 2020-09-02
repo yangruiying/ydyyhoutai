@@ -3,6 +3,7 @@ package com.platform.idleplatform.goods.service;
 import com.platform.idleplatform.goods.dao.GoodsDao;
 import com.platform.idleplatform.goods.entity.GoodsInfo;
 import com.platform.idleplatform.goods.entity.ImgList;
+import com.platform.idleplatform.goods.entity.OrderInfo;
 import com.platform.idleplatform.tool.AppResponse;
 import com.platform.idleplatform.tool.StringUtil;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,11 @@ public class GoodsService {
     public AppResponse getImgList(String goodsId){
         List<ImgList> imgLists = goodsDao.getImgList(goodsId);
         return AppResponse.success("查询成功",imgLists);
+    }
+
+
+    public AppResponse getGoodsById(String userId){
+        List<GoodsInfo> goodsInfos = goodsDao.getGoodsById(userId);
+        return AppResponse.success("查询成功",goodsInfos);
     }
 }
