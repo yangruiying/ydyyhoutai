@@ -20,6 +20,11 @@ public class GoodsService {
         List<GoodsInfo> goodsList = goodsDao.getGoodsList();
         return AppResponse.success("查询成功",goodsList);
     }
+
+    public AppResponse getAttenGoodsList(String userId){
+        List<GoodsInfo> goodsInfos = goodsDao.getAttenGoodsList(userId);
+        return AppResponse.success("查询成功",goodsInfos);
+    }
 /**
  * 发布商品
  */
@@ -40,5 +45,15 @@ public class GoodsService {
     public AppResponse getGoodsById(String userId){
         List<GoodsInfo> goodsInfos = goodsDao.getGoodsById(userId);
         return AppResponse.success("查询成功",goodsInfos);
+    }
+
+    public AppResponse getIsUserGoods(GoodsInfo goodsInfo){
+        int n = goodsDao.getIsUserGoods(goodsInfo);
+        return AppResponse.success("查询成功",n);
+    }
+
+    public AppResponse getGoodsQuery(String goodsId){
+        GoodsInfo goodsInfo = goodsDao.getGoodsQuery(goodsId);
+        return AppResponse.success("查询成功",goodsInfo);
     }
 }

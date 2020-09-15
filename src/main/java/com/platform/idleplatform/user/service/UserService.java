@@ -32,4 +32,14 @@ public class UserService {
         userDao.cancelFans(fansInfo);
         return AppResponse.success("更新成功");
     }
+
+    public AppResponse getFansNum(String userId){
+        int n = userDao.getFansNum(userId);
+        return AppResponse.success("查询成功",n);
+    }
+
+    public AppResponse getAttenNum(String userId){
+        int n = userDao.getAttenNum(userId);
+        return AppResponse.success("查询成功",n);
+    }
 }
