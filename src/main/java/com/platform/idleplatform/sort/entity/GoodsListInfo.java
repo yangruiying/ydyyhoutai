@@ -18,6 +18,12 @@ public class GoodsListInfo {
      */
     private double price;
 
+    private String imagePath;
+
+    private  String userName;
+
+    private String userId;
+
     public String getGoodsId() {
         return goodsId;
     }
@@ -48,5 +54,29 @@ public class GoodsListInfo {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

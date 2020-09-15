@@ -23,6 +23,10 @@ public class GoodsController {
         return goodsService.getGoodsList();
     }
 
+    @RequestMapping("getAttenGoodsList")
+    AppResponse getAttenGoodsList(String userId){
+        return goodsService.getAttenGoodsList(userId);
+    }
     @PostMapping("addGoods")
     AppResponse addGoods(GoodsInfo goodsInfo){
         return goodsService.addGoods(goodsInfo);
@@ -36,6 +40,16 @@ public class GoodsController {
     @RequestMapping("getGoodsById")
     AppResponse getGoodsById(String userId){
         return goodsService.getGoodsById(userId);
+    }
+
+    @RequestMapping("getIsUserGoods")
+    AppResponse getIsUserGoods(GoodsInfo goodsInfo){
+        return goodsService.getIsUserGoods(goodsInfo);
+    }
+
+    @RequestMapping("getGoodsQuery")
+    AppResponse getGoodsQuery(String goodsId){
+        return goodsService.getGoodsQuery(goodsId);
     }
 
 }

@@ -19,4 +19,8 @@ public interface UserDao {
 
     public int cancelFans(FansInfo fansInfo);
 
+    public int getFansNum(String userId);
+
+    public int getAttenNum(String userId);
+
 }

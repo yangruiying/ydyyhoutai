@@ -15,6 +15,8 @@ public class GoodsInfo {
     public String userId;
     public String imagePath;
     public String userName;
+    public String firstSort;
+    public String secondSort;
     public String getGoodsId() {
         return goodsId;
     }
@@ -109,5 +111,21 @@ public class GoodsInfo {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getFirstSort() {
+        return firstSort;
+    }
+
+    public void setFirstSort(String firstSort) {
+        this.firstSort = firstSort;
+    }
+
+    public String getSecondSort() {
+        return secondSort;
+    }
+
+    public void setSecondSort(String secondSort) {
+        this.secondSort = secondSort;
     }
 }

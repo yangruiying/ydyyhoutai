@@ -29,17 +29,22 @@
     <!--获取二级分类和商品-->
     <select id="getNextNodeTree" resultType="com.platform.idleplatform.sort.entity.GoodsListInfo">
     SELECT
-    a.goods_id,
+    a.goods_id goodsId,
+    t_user.user_id userId,
+    user_name,
+    image_path,
 	title,
 	intro,
 	url indexPath,
 	price
     FROM
 	    t_goods a,
-	    t_image
+	    t_image,
+	    t_user
     WHERE
 	    a.goods_id = t_image.goods_id
     AND goods_order = 0
-    AND second_sort = #{sort_id}
+    AND second_sort = #{sortId}
+    AND a.user_id = t_user.user_id
     </select>
 </mapper>

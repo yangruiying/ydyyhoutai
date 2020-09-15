@@ -36,4 +36,14 @@ public class UserController {
     public AppResponse cancelFans(FansInfo fansInfo){
         return userService.cancelFans(fansInfo);
     }
+
+    @RequestMapping("getFansNum")
+    public AppResponse getFansNum(String userId){
+        return userService.getFansNum(userId);
+    }
+
+    @RequestMapping("getAttenNum")
+    public AppResponse getAttenNum(String userId){
+        return userService.getAttenNum(userId);
+    }
 }

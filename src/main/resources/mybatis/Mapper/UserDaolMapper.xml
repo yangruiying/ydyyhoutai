@@ -31,10 +31,8 @@
 
 	<!--取消关注-->
 	<update id="cancelFans" parameterType="com.platform.idleplatform.user.entity.FansInfo">
-		update
+		delete from
 			t_fans
-		set
-			is_delete = 1
 		where
 			user_id = #{userId}
 		and
@@ -51,7 +49,25 @@
 			user_id = #{userId}
 		AND
 			fans = #{fans}
-		AND
-			is_delete = 0
+	</select>
+
+	<!--查询粉丝数量-->
+	<select id="getFansNum" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select
+			count(*)
+		from
+			t_fans
+		where
+			fans = #{userId}
+	</select>
+
+	<!--查询关注的数量-->
+	<select id="getAttenNum" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select
+			count(*)
+		from
+			t_fans
+		where
+			user_id = #{userId}
 	</select>
 </mapper>
