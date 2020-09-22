@@ -7,6 +7,9 @@ public class ChatList {
     public String indexPath;
     public String userName;
     public String price;
+    public String msg;
+    public String readCount;
+    public String own;
     public String getUserId() {
         return userId;
     }
@@ -53,5 +56,29 @@ public class ChatList {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getReadCount() {
+        return readCount;
+    }
+
+    public void setReadCount(String readCount) {
+        this.readCount = readCount;
+    }
+
+    public String getOwn() {
+        return own;
+    }
+
+    public void setOwn(String own) {
+        this.own = own;
     }
 }

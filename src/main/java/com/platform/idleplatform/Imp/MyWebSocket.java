@@ -48,7 +48,7 @@ public class MyWebSocket {
         System.out.println(goodsId);
         webSocketSet.add(this);     //加入set中
         //System.out.println(map.get("9652656"));
-        //System.out.println("有新连接加入:"+nickname+",当前在线人数为" + webSocketSet.size());
+        System.out.println("有新连接加入:"+nickname+",当前在线人数为" + webSocketSet.size());
         //this.session.getAsyncRemote().sendText("恭喜"+nickname+"成功连接上WebSocket(其频道号："+session.getId()+")-->当前在线人数为："+webSocketSet.size());
     }
     /**
@@ -91,19 +91,26 @@ public class MyWebSocket {
                 Session fromSession = map.get(socketMsg.getFromUser());
                 System.out.println(socketMsg.getToUser());
                 Session toSession = map.get(socketMsg.getToUser());
+                Session toSession1 = map.get(socketMsg.getToUser());
+                System.out.println(socketMsg.getToUser()+"home");
                 //发送给接受者.
-                if(toSession != null){
+                if (!socketMsg.getMsg().equals("921310952")){
+                    toSession1 = map.get(socketMsg.getToUser()+"home");
+                if(socketMsg != null){
                     //发送给发送者.
                     fromSession.getAsyncRemote().sendText(nickname+":"+socketMsg.getMsg()+":"+goodsId);
                     toSession.getAsyncRemote().sendText(nickname+":"+socketMsg.getMsg()+":"+goodsId);
+                    toSession1.getAsyncRemote().sendText("aaa");
                 }else{
                     fromSession.getAsyncRemote().sendText(nickname+":"+socketMsg.getMsg()+":"+goodsId);
+                    toSession1.getAsyncRemote().sendText(nickname+":"+socketMsg.getMsg()+":"+goodsId);
+                    toSession1.getAsyncRemote().sendText("aaa");
                     //发送给发送者.
                     //fromSession.getAsyncRemote().sendText("系统消息：对方不在线或者您输入的频道号不对");
                 }
-            }else{
-                //群发消息
-                broadcast(nickname+": "+socketMsg.getMsg());
+                }else {
+                    toSession1.getAsyncRemote().sendText("aaa");
+                }
             }
 
         } catch (JsonParseException e) {

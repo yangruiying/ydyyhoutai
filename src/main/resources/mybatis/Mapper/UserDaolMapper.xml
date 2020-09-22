@@ -70,4 +70,22 @@
 		where
 			user_id = #{userId}
 	</select>
+
+    <!--获取用户粉丝数-->
+    <select id="getFans" resultType="com.platform.idleplatform.user.entity.UserInfo">
+    SELECT
+	image_path,
+	(
+		SELECT
+			count(*)
+		FROM
+			t_fans
+		WHERE
+			a.user_id = t_fans.fans
+	) fans
+    FROM
+	t_user a
+    ORDER BY
+	fans DESC
+    </select>
 </mapper>

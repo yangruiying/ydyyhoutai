@@ -51,19 +51,20 @@
     <select id="getSellList" parameterType="java.lang.String" resultType="com.platform.idleplatform.goods.entity.OrderInfo">
     SELECT
 	order_id,
-   t_goods.goods_id goodsId,
+    t_goods.goods_id goodsId,
 	title,
 	url indexPath,
 	price,
 	shipping,
 	t_order.buyer,
 	image_path,
-	user_name
+	user_name,
+	state
     FROM
 	    t_goods,
 	    t_image,
 	    t_user,
-			t_order
+		t_order
     WHERE
 	    t_goods.goods_id = t_image.goods_id
     AND goods_order = 0

@@ -4,6 +4,7 @@ import com.platform.idleplatform.chat.entity.ChatInfo;
 import com.platform.idleplatform.chat.service.ChatService;
 import com.platform.idleplatform.tool.AppResponse;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,5 +30,20 @@ public class ChatController {
     @RequestMapping("/chatRecard")
     public AppResponse chatRecard(ChatInfo chatInfo){
         return chatService.chatRecard(chatInfo);
+    }
+
+    @RequestMapping("/getNewMsg")
+    public AppResponse getNewMsg(ChatInfo chatInfo){
+        return chatService.getNewMsg(chatInfo);
+    }
+
+    @PostMapping("/setRead")
+    public AppResponse setRead(ChatInfo chatInfo){
+        return chatService.setRead(chatInfo);
+    }
+
+    @RequestMapping("/noReadCount")
+    public AppResponse noReadCount(String userId){
+        return chatService.noReadCount(userId);
     }
 }

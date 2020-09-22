@@ -17,6 +17,7 @@ public class GoodsInfo {
     public String userName;
     public String firstSort;
     public String secondSort;
+    public String own;
     public String getGoodsId() {
         return goodsId;
     }
@@ -127,5 +128,13 @@ public class GoodsInfo {
 
     public void setSecondSort(String secondSort) {
         this.secondSort = secondSort;
+    }
+
+    public String getOwn() {
+        return own;
+    }
+
+    public void setOwn(String own) {
+        this.own = own;
     }
 }

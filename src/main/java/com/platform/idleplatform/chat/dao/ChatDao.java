@@ -13,4 +13,10 @@ public interface ChatDao {
     public List<ChatList> chatList(String userId);
 
     public List<ChatInfo> chatRecard(ChatInfo chatInfo);
+
+    public ChatInfo getNewMsg(ChatInfo chatInfo);
+
+    public int setRead(ChatInfo chatInfo);
+
+    public int noReadCount(String userId);
 }

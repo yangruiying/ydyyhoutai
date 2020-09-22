@@ -7,6 +7,7 @@ import com.platform.idleplatform.user.entity.UserInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -41,5 +42,14 @@ public class UserService {
     public AppResponse getAttenNum(String userId){
         int n = userDao.getAttenNum(userId);
         return AppResponse.success("查询成功",n);
+    }
+
+    /**
+     * 获取用户粉丝
+     * @return
+     */
+    public AppResponse getFans(){
+        List<UserInfo> userInfos = userDao.getFans();
+        return AppResponse.success("查询成功" , userInfos);
     }
 }

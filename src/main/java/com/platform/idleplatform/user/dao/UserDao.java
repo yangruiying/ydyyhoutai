@@ -4,6 +4,8 @@ import com.platform.idleplatform.user.entity.FansInfo;
 import com.platform.idleplatform.user.entity.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UserDao {
     /**
@@ -22,5 +24,7 @@ public interface UserDao {
     public int getFansNum(String userId);
 
     public int getAttenNum(String userId);
+
+    public List<UserInfo> getFans();
 
 }

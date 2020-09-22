@@ -30,7 +30,7 @@
     AND t_user.user_id = t_goods.user_id
     ORDER BY
 	favor DESC
-	limit 0,3
+	limit 0,2
     </select>
 
     <!--获取商品-->
@@ -42,6 +42,7 @@
 	url indexPath,
 	price,
 	t_goods.user_id,
+	t_goods.user_id own,
 	image_path,
 	user_name,
 	(

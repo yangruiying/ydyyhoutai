@@ -46,4 +46,9 @@ public class UserController {
     public AppResponse getAttenNum(String userId){
         return userService.getAttenNum(userId);
     }
+
+    @RequestMapping("getFans")
+    public AppResponse getFans(){
+        return  userService.getFans();
+    }
 }

@@ -11,6 +11,7 @@ public class OrderInfo {
     public String price;
     public String shipping;
     public String userId;
+    public int state;
     public String getGoodsId() {
         return goodsId;
     }
@@ -73,5 +74,13 @@ public class OrderInfo {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 }

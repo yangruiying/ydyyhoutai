@@ -28,4 +28,19 @@ public class ChatService {
         List<ChatInfo> chatInfos = chatDao.chatRecard(chatInfo);
         return AppResponse.success("查询成功",chatInfos);
     }
+
+    public AppResponse getNewMsg(ChatInfo chatInfo){
+        ChatInfo chatInfos = chatDao.getNewMsg(chatInfo);
+        return AppResponse.success("查询成功", chatInfos);
+    }
+
+    public AppResponse setRead(ChatInfo chatInfo){
+        int n = chatDao.setRead(chatInfo);
+        return AppResponse.success("更新成功", n);
+    }
+
+    public AppResponse noReadCount(String userId){
+        int n = chatDao.noReadCount(userId);
+        return AppResponse.success("查询成功", n);
+    }
 }
