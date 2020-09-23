@@ -1,5 +1,6 @@
 package com.platform.idleplatform.order.controller;
 
+import com.platform.idleplatform.order.entity.BuyInfo;
 import com.platform.idleplatform.order.entity.OrderInfo;
 import com.platform.idleplatform.order.service.OrderService;
 import com.platform.idleplatform.tool.AppResponse;
@@ -30,5 +31,15 @@ public class OrderController {
     @RequestMapping("getSellList")
     AppResponse getSellList(String userId){
         return orderService.getSellList(userId);
+    }
+
+    @RequestMapping("getIsOrder")
+    AppResponse getIsOrder(BuyInfo buyInfo){
+        return orderService.getIsOrder(buyInfo);
+    }
+
+    @RequestMapping("getOrderState")
+    AppResponse getOrderState(BuyInfo buyInfo){
+        return orderService.getOrderState(buyInfo);
     }
 }

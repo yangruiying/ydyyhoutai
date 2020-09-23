@@ -1,6 +1,7 @@
 package com.platform.idleplatform.order.service;
 
 import com.platform.idleplatform.order.dao.OrderDao;
+import com.platform.idleplatform.order.entity.BuyInfo;
 import com.platform.idleplatform.order.entity.OrderInfo;
 import com.platform.idleplatform.tool.AppResponse;
 import com.platform.idleplatform.tool.StringUtil;
@@ -28,5 +29,15 @@ public class OrderService {
     public AppResponse getSellList(String userId){
         List<OrderInfo> orderInfos = orderDao.getSellList(userId);
         return AppResponse.success("查询成功",orderInfos);
+    }
+
+    public AppResponse getIsOrder(BuyInfo buyInfo){
+        int n = orderDao.getIsOrder(buyInfo);
+        return AppResponse.success("查询成功" , n);
+    }
+
+    public AppResponse getOrderState(BuyInfo buyInfo){
+        int state = orderDao.getOrderState(buyInfo);
+        return AppResponse.success("查询成功" , state);
     }
 }

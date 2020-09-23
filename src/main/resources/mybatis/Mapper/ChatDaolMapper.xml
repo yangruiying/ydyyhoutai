@@ -51,7 +51,19 @@
 		AND t_chat.goods_id = b.goodsId
 		AND t_chat.is_read = 0
 		AND t_chat.user2 = #{userId}
-	) readCount
+	) readCount,
+	(
+		SELECT
+			state
+		FROM
+			t_order
+		WHERE
+			(
+				buyer = #{userId}
+				OR buyer = b.userId
+			)
+		AND goods_id = b.goodsId
+	) state
 	FROM
 	(
 		SELECT

@@ -10,6 +10,7 @@ public class ChatList {
     public String msg;
     public String readCount;
     public String own;
+    public String state;
     public String getUserId() {
         return userId;
     }
@@ -80,5 +81,13 @@ public class ChatList {
 
     public void setOwn(String own) {
         this.own = own;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

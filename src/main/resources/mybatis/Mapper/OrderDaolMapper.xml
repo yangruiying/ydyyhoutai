@@ -72,4 +72,32 @@
     AND t_order.goods_id = t_goods.goods_id
     AND t_goods.user_id = #{userId}
     </select>
+
+    <!--获取订单是否存在-->
+    <select id="getIsOrder" parameterType="com.platform.idleplatform.order.entity.BuyInfo" resultType="java.lang.Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            t_order
+        WHERE
+            (buyer = #{user1}
+        OR
+            buyer = #{user2} )
+        AND
+            goods_id = #{goodsId}
+    </select>
+
+    <!--获取订单状态-->
+    <select id="getOrderState" parameterType="com.platform.idleplatform.order.entity.BuyInfo" resultType="java.lang.Integer">
+        select
+            state
+        FROM
+            t_order
+        WHERE
+            (buyer = #{user1}
+        OR
+            buyer = #{user2} )
+        AND
+            goods_id = #{goodsId}
+    </select>
 </mapper>
